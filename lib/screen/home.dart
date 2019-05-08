@@ -18,7 +18,6 @@ class _HomeState extends State<Home> {
   @override
   initState() {
     _getPhotos();
-    //setState(() => screenSize = MediaQuery.of(context).size.width);
     super.initState();
   }
 
