@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Web Demo',
+      title: 'Flutter on The Web: Responsive Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
