@@ -17,10 +17,10 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
   String get author;
 
   @BuiltValueField(wireName: 'width')
-  String get width;
+  int get width;
 
   @BuiltValueField(wireName: 'height')
-  String get height;
+  int get height;
 
   @BuiltValueField(wireName: 'url')
   String get url;
@@ -50,5 +50,9 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
   static BuiltList<Photo> parseListOfPhotos(String responseBody) {
     final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
     return deserializeListOf<Photo>(parsed);
+  }
+
+  String computedImageUrl() {
+    return 'https://picsum.photos/id/${this.id}/400/400';
   }
 }

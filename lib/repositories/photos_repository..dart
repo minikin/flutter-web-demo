@@ -11,10 +11,10 @@ class PhotoRepository {
     @required int page,
   }) async {
     try {
-      final questionnaires = await _photoProvider.fetchPhotos(
+      final photos = await _photoProvider.fetchPhotos(
         page: page,
       );
-      return questionnaires;
+      return photos;
     } on PhotoError catch (error) {
       throw ('Cannot fetch photos: \n${error.message}');
     }
@@ -26,12 +26,12 @@ class PhotoRepository {
     @required int height,
   }) async {
     try {
-      final questionnaire = _photoProvider.fetchPhoto(
+      final photo = _photoProvider.fetchPhoto(
         photoId: photoId,
         width: width,
         height: height,
       );
-      return questionnaire;
+      return photo;
     } on PhotoError catch (error) {
       throw ('Cannot fetch photo with id: \n${error.message}');
     }

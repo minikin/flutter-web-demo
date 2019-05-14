@@ -12,7 +12,7 @@ class PhotoItem extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.all(4),
       child: Image.network(
-        photo.imageUrl,
+        photo.computedImageUrl(),
         fit: BoxFit.cover,
       ),
     );

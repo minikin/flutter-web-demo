@@ -12,7 +12,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final _photoRepository = PhotoRepository();
-  final BuiltList<Photo> photoList = BuiltList<Photo>();
+  List<Photo> photoList = [];
   final isFetchingNextPage = false;
   double screenSize = 0;
   ScrollController _scrollController = ScrollController();
@@ -25,15 +25,12 @@ class _HomeState extends State<Home> {
 
   _getPhotos() async {
     final items = await _photoRepository.fetchPhotos(page: 1);
-    photoList.rebuild((b) => b
-      ..clear()
-      ..addAll(items));
+    setState(() => photoList = items.toList());
   }
 
   @override
   Widget build(BuildContext context) {
     setState(() => screenSize = MediaQuery.of(context).size.width);
-    print(screenSize);
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter Web App'),

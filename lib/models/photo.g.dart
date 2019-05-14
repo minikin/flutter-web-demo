@@ -24,11 +24,9 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
       serializers.serialize(object.author,
           specifiedType: const FullType(String)),
       'width',
-      serializers.serialize(object.width,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.width, specifiedType: const FullType(int)),
       'height',
-      serializers.serialize(object.height,
-          specifiedType: const FullType(String)),
+      serializers.serialize(object.height, specifiedType: const FullType(int)),
       'url',
       serializers.serialize(object.url, specifiedType: const FullType(String)),
       'download_url',
@@ -60,11 +58,11 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
           break;
         case 'width':
           result.width = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(int)) as int;
           break;
         case 'height':
           result.height = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(int)) as int;
           break;
         case 'url':
           result.url = serializers.deserialize(value,
@@ -87,9 +85,9 @@ class _$Photo extends Photo {
   @override
   final String author;
   @override
-  final String width;
+  final int width;
   @override
-  final String height;
+  final int height;
   @override
   final String url;
   @override
@@ -174,13 +172,13 @@ class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
   String get author => _$this._author;
   set author(String author) => _$this._author = author;
 
-  String _width;
-  String get width => _$this._width;
-  set width(String width) => _$this._width = width;
+  int _width;
+  int get width => _$this._width;
+  set width(int width) => _$this._width = width;
 
-  String _height;
-  String get height => _$this._height;
-  set height(String height) => _$this._height = height;
+  int _height;
+  int get height => _$this._height;
+  set height(int height) => _$this._height = height;
 
   String _url;
   String get url => _$this._url;

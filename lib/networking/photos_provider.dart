@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:built_collection/built_collection.dart';
 import 'package:flutter_web/foundation.dart';
 import 'package:flutter_web_demo/models/models.dart';
@@ -17,11 +15,6 @@ class PhotoProvider {
   }) async {
     final response = await _client.get(
       '$_baseUrl/id/$photoId/$width/$height',
-      headers: {
-        HttpHeaders.acceptHeader: '*/*',
-        HttpHeaders.cacheControlHeader: 'no-cache',
-        HttpHeaders.contentTypeHeader: 'application/json',
-      },
     );
     print('fetchPhoto: ${response.statusCode}');
     if (response.statusCode == 200) {
@@ -36,11 +29,6 @@ class PhotoProvider {
   }) async {
     final response = await _client.get(
       '$_baseUrl/list?page=$page&limit=50',
-      headers: {
-        HttpHeaders.acceptHeader: '*/*',
-        HttpHeaders.cacheControlHeader: 'no-cache',
-        HttpHeaders.contentTypeHeader: 'application/json',
-      },
     );
     print('fetchPhotos: ${response.statusCode}');
     if (response.statusCode == 200) {
