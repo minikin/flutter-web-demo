@@ -22,8 +22,8 @@ class _HomeState extends State<Home> {
   }
 
   _getPhotos() async {
-    final stream = await PhotoProvider.getPhotos();
-    stream.listen((photo) => setState(() => photoList.add(photo)));
+    // final stream = await PhotoProvider.getPhotos();
+    // stream.listen((photo) => setState(() => photoList.add(photo)));
   }
 
   @override
