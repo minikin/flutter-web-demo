@@ -13,10 +13,10 @@ class PhotoProvider {
   Future<Photo> fetchPhoto({
     @required String photoId,
     @required int width,
-    @required hight,
+    @required height,
   }) async {
     final response = await _client.get(
-      '$_baseUrl/id/$photoId/$width/$hight',
+      '$_baseUrl/id/$photoId/$width/$height',
       headers: {
         HttpHeaders.acceptHeader: '*/*',
         HttpHeaders.cacheControlHeader: 'no-cache',
