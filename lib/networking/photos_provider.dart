@@ -32,7 +32,7 @@ class PhotoProvider {
   }
 
   Future<BuiltList<Photo>> fetchPhotos({
-    @required String page,
+    @required int page,
   }) async {
     final response = await _client.get(
       '$_baseUrl/list?page=$page&limit=50',

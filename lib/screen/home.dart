@@ -1,6 +1,7 @@
+import 'package:built_collection/built_collection.dart';
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web_demo/models/photo.dart';
-import 'package:flutter_web_demo/networking/photos_provider.dart';
+import 'package:flutter_web_demo/repositories/photos_repository..dart';
 import 'package:flutter_web_demo/widgets/photo_item.dart';
 
 class Home extends StatefulWidget {
@@ -10,7 +11,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final List<Photo> photoList = [];
+  final _photoRepository = PhotoRepository();
+  final BuiltList<Photo> photoList = BuiltList<Photo>();
   final isFetchingNextPage = false;
   double screenSize = 0;
   ScrollController _scrollController = ScrollController();
@@ -22,8 +24,10 @@ class _HomeState extends State<Home> {
   }
 
   _getPhotos() async {
-    // final stream = await PhotoProvider.getPhotos();
-    // stream.listen((photo) => setState(() => photoList.add(photo)));
+    final items = await _photoRepository.fetchPhotos(page: 1);
+    photoList.rebuild((b) => b
+      ..clear()
+      ..addAll(items));
   }
 
   @override

@@ -5,14 +5,10 @@ import 'package:flutter_web_demo/networking/photo_error.dart';
 import 'package:flutter_web_demo/networking/photos_provider.dart';
 
 class PhotoRepository {
-  final PhotoProvider _photoProvider;
-
-  PhotoRepository(
-    this._photoProvider,
-  ) : super();
+  final _photoProvider = PhotoProvider();
 
   Future<BuiltList<Photo>> fetchPhotos({
-    @required String page,
+    @required int page,
   }) async {
     try {
       final questionnaires = await _photoProvider.fetchPhotos(
