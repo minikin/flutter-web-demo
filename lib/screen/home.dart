@@ -13,6 +13,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final _photoRepository = PhotoRepository();
   List<Photo> photoList = [];
+  int currentPage = 1;
   final isFetchingNextPage = false;
   double screenSize = 0;
   ScrollController _scrollController = ScrollController();
@@ -20,12 +21,36 @@ class _HomeState extends State<Home> {
   @override
   initState() {
     _getPhotos();
+    _scrollController.addListener(() {
+      double maxScroll = _scrollController.position.maxScrollExtent;
+      double currentScroll = _scrollController.position.pixels;
+      double delta = 200;
+      if (maxScroll - currentScroll <= delta) {
+        _fetchNextPage();
+      }
+    });
     super.initState();
   }
 
+  @override
+  dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
   _getPhotos() async {
-    final items = await _photoRepository.fetchPhotos(page: 1);
+    final items = await _photoRepository.fetchPhotos(page: currentPage);
     setState(() => photoList = items.toList());
+  }
+
+  _fetchNextPage() async {
+    if (currentPage <= 20) {
+      currentPage = currentPage + 1;
+      final items = await _photoRepository.fetchPhotos(page: currentPage);
+      setState(() => photoList.addAll(items.toList()));
+    } else {
+      currentPage = 0;
+    }
   }
 
   @override
