@@ -11,11 +11,10 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final _photoRepository = PhotoRepository();
+  final _scrollController = ScrollController();
   List<Photo> photoList = [];
-  int currentPage = 1;
-  final isFetchingNextPage = false;
-  double screenSize = 0;
-  ScrollController _scrollController = ScrollController();
+  int _currentPage = 1;
+  double _screenSize = 0;
 
   @override
   initState() {
@@ -38,23 +37,23 @@ class _HomeState extends State<Home> {
   }
 
   _getPhotos() async {
-    final items = await _photoRepository.fetchPhotos(page: currentPage);
+    final items = await _photoRepository.fetchPhotos(page: _currentPage);
     setState(() => photoList = items.toList());
   }
 
   _fetchNextPage() async {
-    if (currentPage <= 20) {
-      currentPage = currentPage + 1;
-      final items = await _photoRepository.fetchPhotos(page: currentPage);
+    if (_currentPage <= 20) {
+      ++_currentPage;
+      final items = await _photoRepository.fetchPhotos(page: _currentPage);
       setState(() => photoList.addAll(items.toList()));
     } else {
-      currentPage = 0;
+      _currentPage = 0;
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    setState(() => screenSize = MediaQuery.of(context).size.width);
+    setState(() => _screenSize = MediaQuery.of(context).size.width);
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -74,7 +73,7 @@ class _HomeState extends State<Home> {
           margin: const EdgeInsets.all(8),
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: (screenSize >= 600) ? 4 : 1),
+                crossAxisCount: (_screenSize >= 600) ? 4 : 1),
             itemCount: photoList.length,
             itemBuilder: (_, index) {
               return PhotoItem(photo: photoList[index]);
