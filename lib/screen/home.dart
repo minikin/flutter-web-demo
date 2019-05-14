@@ -1,4 +1,3 @@
-import 'package:built_collection/built_collection.dart';
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web_demo/models/photo.dart';
 import 'package:flutter_web_demo/repositories/photos_repository..dart';
@@ -58,10 +57,21 @@ class _HomeState extends State<Home> {
     setState(() => screenSize = MediaQuery.of(context).size.width);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Web App'),
+        title: Center(
+          child: Text(
+            'Flutter Web App',
+            style: TextStyle(
+              color: Colors.black,
+            ),
+          ),
+        ),
+        backgroundColor: Colors.white,
+        brightness: Brightness.light,
+        elevation: 1,
       ),
       body: SafeArea(
         child: Container(
+          margin: const EdgeInsets.all(8),
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: (screenSize >= 600) ? 4 : 1),
