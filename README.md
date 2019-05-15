@@ -1,5 +1,7 @@
 # Flutter Web App Demo
 
+[![Codemagic build status](https://api.codemagic.io/apps/5cdb3c1ed85907001941f21e/5cdb3c1ed85907001941f21d/status_badge.svg)](https://codemagic.io/apps/5cdb3c1ed85907001941f21e/5cdb3c1ed85907001941f21d/latest_build)
+
 Experimental responsive web app powered by Flutter and Dart.
 
 - [Flutter Web App Demo](#flutter-web-app-demo)
