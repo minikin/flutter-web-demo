@@ -1,6 +1,7 @@
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web_demo/models/photo.dart';
 import 'package:flutter_web_demo/repositories/photos_repository..dart';
+import 'package:flutter_web_demo/utils/free_functions.dart';
 import 'package:flutter_web_demo/widgets/photo_item.dart';
 
 class Home extends StatefulWidget {
@@ -53,7 +54,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    setState(() => _screenSize = MediaQuery.of(context).size.width);
+    setState(() => _screenSize = sreenWidth(context: context));
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -69,17 +70,22 @@ class _HomeState extends State<Home> {
         elevation: 1,
       ),
       body: SafeArea(
-        child: Container(
-          margin: const EdgeInsets.all(8),
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: (_screenSize >= 600) ? 4 : 1),
-            itemCount: photoList.length,
-            itemBuilder: (_, index) {
-              return PhotoItem(photo: photoList[index]);
-            },
-            controller: _scrollController,
-          ),
+        child: OrientationBuilder(
+          builder: (BuildContext context, Orientation orientation) {
+            return Container(
+              margin: const EdgeInsets.all(8),
+              width: sreenWidth(context: context),
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: (_screenSize >= 600) ? 4 : 1),
+                itemCount: photoList.length,
+                itemBuilder: (_, index) {
+                  return PhotoItem(photo: photoList[index]);
+                },
+                controller: _scrollController,
+              ),
+            );
+          },
         ),
       ),
     );
