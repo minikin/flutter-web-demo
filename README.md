@@ -4,6 +4,8 @@
 
 Experimental responsive web app powered by Flutter and Dart.
 
+[![flutter-web-demo](https://github.com/minikin/flutter-web-demo/blob/master/assets/flutter_wep_app.gif?raw=true)](http://minikin.me/flutter-web-demo)
+
 - [Flutter Web App Demo](#flutter-web-app-demo)
   - [Requirements](#requirements)
   - [Develop](#develop)
