@@ -7,10 +7,18 @@ Experimental responsive web app powered by Flutter and Dart.
 [![flutter-web-demo](https://github.com/minikin/flutter-web-demo/blob/master/assets/flutter_wep_app.gif?raw=true)](http://minikin.me/flutter-web-demo)
 
 - [Flutter Web App Demo](#flutter-web-app-demo)
+  - [Features](#features)
   - [Requirements](#requirements)
   - [Develop](#develop)
   - [Building with the production JavaScript compiler](#building-with-the-production-javaScript-compiler)
   - [FAQ](#faq)
+
+## Features: 
+- photos are fetched from a server
+- infinity scrolling
+- responsive to screen size changes including mobile device orientation changes
+- powered by [build_value](https://pub.dev/packages/built_value) and [built_collection](https://pub.dev/packages/built_collection)
+- background JSON parsing
 
 ## Requirements
 
