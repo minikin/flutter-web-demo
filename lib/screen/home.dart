@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    setState(() => _screenSize = sreenWidth(context: context));
+    setState(() => _screenSize = screenWidth(context: context));
     return Scaffold(
       appBar: AppBar(
         title: Center(
@@ -74,7 +74,7 @@ class _HomeState extends State<Home> {
           builder: (BuildContext context, Orientation orientation) {
             return Container(
               margin: const EdgeInsets.all(8),
-              width: sreenWidth(context: context),
+              width: screenWidth(context: context),
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: (_screenSize >= 600) ? 4 : 1),

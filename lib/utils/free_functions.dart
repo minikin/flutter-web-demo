@@ -1,5 +1,5 @@
 import 'package:flutter_web/material.dart';
 
-double sreenWidth({BuildContext context}) {
+double screenWidth({BuildContext context}) {
   return MediaQuery.of(context).size.width;
 }
