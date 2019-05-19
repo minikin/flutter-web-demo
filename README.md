@@ -13,7 +13,8 @@ Experimental responsive web app powered by Flutter and Dart.
   - [Building with the production JavaScript compiler](#building-with-the-production-javaScript-compiler)
   - [FAQ](#faq)
 
-## Features: 
+## Features
+
 - photos are fetched from a server
 - infinity scrolling
 - responsive to screen size changes including mobile device orientation changes
@@ -33,6 +34,12 @@ Experimental responsive web app powered by Flutter and Dart.
   - [Android Studio / IntelliJ](https://flutter.dev/docs/get-started/editor?tab=vscode)
 
 ## Develop
+
+This project use `built_value` and `built_collection` as dependencies so before to start web server run:
+
+```sh
+flutter packages pub run build_runner build --delete-conflicting-outputs
+```
 
 To use webdev with hot-reload, run the following within your project directory:
 
