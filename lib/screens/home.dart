@@ -80,7 +80,10 @@ class _HomeState extends State<Home> {
                     crossAxisCount: (_screenSize >= 600) ? 4 : 1),
                 itemCount: photoList.length,
                 itemBuilder: (_, index) {
-                  return PhotoItem(photo: photoList[index]);
+                  return PhotoItem(
+                    photo: photoList[index],
+                    onTap: (photo) {},
+                  );
                 },
                 controller: _scrollController,
               ),
