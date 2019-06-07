@@ -41,10 +41,16 @@ This project use `built_value` and `built_collection` as dependencies so before 
 flutter packages pub run build_runner build --delete-conflicting-outputs
 ```
 
+Activate `webdev` package
+
+```sh
+flutter packages pub global activate webdev
+```
+
 To use webdev with hot-reload, run the following within your project directory:
 
 ```sh
-webdev serve --auto restart
+flutter packages pub global run webdev serve --auto restart
 ```
 
 ## Building with the production JavaScript compiler
@@ -52,13 +58,13 @@ webdev serve --auto restart
 To enable the release compiler, pass in the --release flag (or just -r).
 
 ```sh
-webdev serve -r
+flutter packages pub global run webdev serve -r
 ```
 
 If you'd like to generate output to disk, we recommend you use webdev.
 
 ```sh
-webdev build
+flutter packages pub global run webdev build
 ```
 
 This will create a build directory with index.html, main.dart.js and the rest of the files needed to run
