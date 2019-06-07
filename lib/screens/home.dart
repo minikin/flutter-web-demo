@@ -1,6 +1,7 @@
 import 'package:flutter_web/material.dart';
 import 'package:flutter_web_demo/models/photo.dart';
 import 'package:flutter_web_demo/repositories/photos_repository.dart';
+import 'package:flutter_web_demo/screens/photo_details.dart';
 import 'package:flutter_web_demo/utils/free_functions.dart';
 import 'package:flutter_web_demo/widgets/photo_item.dart';
 
@@ -82,7 +83,13 @@ class _HomeState extends State<Home> {
                 itemBuilder: (_, index) {
                   return PhotoItem(
                     photo: photoList[index],
-                    onTap: (photo) {},
+                    onClick: (photo) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => PhotoDetails(photo: photo)),
+                      );
+                    },
                   );
                 },
                 controller: _scrollController,
