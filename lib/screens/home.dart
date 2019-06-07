@@ -63,6 +63,7 @@ class _HomeState extends State<Home> {
             'Flutter Web App',
             style: TextStyle(
               color: Colors.black,
+              fontSize: 24,
             ),
           ),
         ),
@@ -87,7 +88,9 @@ class _HomeState extends State<Home> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => PhotoDetails(photo: photo)),
+                          settings: RouteSettings(name: '/photo-${photo.id}'),
+                          builder: (context) => PhotoDetails(photo: photo),
+                        ),
                       );
                     },
                   );
