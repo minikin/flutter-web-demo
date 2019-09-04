@@ -12,6 +12,7 @@ Experimental responsive web app powered by Flutter and Dart.
   - [Develop](#develop)
   - [Building with the production JavaScript compiler](#building-with-the-production-javaScript-compiler)
   - [FAQ](#faq)
+  - [Troubleshooting](#troubleshooting)
 
 ## Features
 
@@ -23,12 +24,12 @@ Experimental responsive web app powered by Flutter and Dart.
 
 ## Requirements
 
-- Flutter 1.5.4
-- Dart 2.3.0+
-- Xcode 10.0+
+- Flutter: the latest version on `flutter dev channel`
+- Dart: 2.5.0+
+- Xcode: 10.0+
 - Androind Studio 3.3.1+
-- Ruby 2.4+
-- CocoaPods 1.5.0+
+- Ruby: 2.4+
+- CocoaPods: 1.7.0+
 - Flutter & Dart plugins:
   - [Visual Studio Code](https://flutter.dev/docs/get-started/editor?tab=androidstudio)
   - [Android Studio / IntelliJ](https://flutter.dev/docs/get-started/editor?tab=vscode)
@@ -75,3 +76,20 @@ the application using a static HTTP server.
 Read more about [Flutter for web](https://github.com/flutter/flutter_web)
 
 If you have any questions ping me on twitter: [@minikin](https://twitter.com/minikin)
+
+## Troubleshooting
+
+If you catch an error like this:
+
+```sh
+flutter packages pub global run webdev serve -r
+webdev could not run for this project.
+Could not find a file named "pubspec.yaml" in "/Users/JohnDoe/flutter/.pub-cache/hosted/pub.dartlang.org/built_value-6.7.1".
+pub finished with exit code 78
+```
+
+try to run:
+
+```sh
+pub cache repair
+```
