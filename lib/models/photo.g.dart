@@ -15,7 +15,7 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
   final String wireName = 'Photo';
 
   @override
-  Iterable serialize(Serializers serializers, Photo object,
+  Iterable<Object> serialize(Serializers serializers, Photo object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
       'id',
@@ -38,7 +38,7 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
   }
 
   @override
-  Photo deserialize(Serializers serializers, Iterable serialized,
+  Photo deserialize(Serializers serializers, Iterable<Object> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PhotoBuilder();
 
