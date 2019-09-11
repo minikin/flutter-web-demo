@@ -1,5 +1,5 @@
 import 'package:built_collection/built_collection.dart';
-import 'package:flutter_web/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_web_demo/models/models.dart';
 import 'package:flutter_web_demo/networking/photo_error.dart';
 import 'package:flutter_web_demo/networking/photos_provider.dart';
