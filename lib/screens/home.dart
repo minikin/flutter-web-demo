@@ -1,4 +1,4 @@
-import 'package:flutter_web/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_web_demo/models/photo.dart';
 import 'package:flutter_web_demo/repositories/photos_repository.dart';
 import 'package:flutter_web_demo/screens/photo_details.dart';

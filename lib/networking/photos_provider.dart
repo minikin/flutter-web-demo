@@ -1,5 +1,6 @@
 import 'package:built_collection/built_collection.dart';
-import 'package:flutter_web/foundation.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_web_demo/models/models.dart';
 import 'package:flutter_web_demo/networking/photo_error.dart';
 import 'package:http/http.dart' show Client;
