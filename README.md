@@ -36,39 +36,30 @@ Experimental responsive web app powered by Flutter and Dart.
 
 ## Develop
 
-This project use `built_value` and `built_collection` as dependencies so before to start web server run:
-
-```sh
-flutter packages pub run build_runner build --delete-conflicting-outputs
-```
-
 Activate `webdev` package
 
 ```sh
-flutter packages pub global activate webdev
+flutter config --enable-web
 ```
 
-To use webdev with hot-reload, run the following within your project directory:
+Run you app in Chrome
 
 ```sh
-flutter packages pub global run webdev serve --auto restart
+flutter run -d chrome
 ```
+
+To hot restart (and rebuild state), press "R".
+
 
 ## Building with the production JavaScript compiler
 
-To enable the release compiler, pass in the --release flag (or just -r).
+To enable the release compiler, run.
 
 ```sh
-flutter packages pub global run webdev serve -r
+flutter build web
 ```
 
-If you'd like to generate output to disk, we recommend you use webdev.
-
-```sh
-flutter packages pub global run webdev build
-```
-
-This will create a build directory with index.html, main.dart.js and the rest of the files needed to run
+This will create a `build/web` directory with index.html, main.dart.js and the rest of the files needed to run
 the application using a static HTTP server.
 
 ## FAQ
@@ -78,6 +69,16 @@ Read more about [Flutter for web](https://github.com/flutter/flutter_web)
 If you have any questions ping me on twitter: [@minikin](https://twitter.com/minikin)
 
 ## Troubleshooting
+
+### 1
+
+In case of some errors try to run:
+
+```sh
+flutter clean
+```
+
+### 2
 
 If you catch an error like this:
 
@@ -92,4 +93,12 @@ try to run:
 
 ```sh
 pub cache repair
+```
+
+### 3
+
+This project use `built_value` and `built_collection` as dependencies so you might need to run command below before to start a web server:
+
+```sh
+flutter packages pub run build_runner build --delete-conflicting-outputs
 ```
