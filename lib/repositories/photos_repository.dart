@@ -7,19 +7,6 @@ import 'package:flutter_web_demo/networking/photos_provider.dart';
 class PhotoRepository {
   final _photoProvider = PhotoProvider();
 
-  Future<BuiltList<Photo>> fetchPhotos({
-    @required int page,
-  }) async {
-    try {
-      final photos = await _photoProvider.fetchPhotos(
-        page: page,
-      );
-      return photos;
-    } on PhotoError catch (error) {
-      throw ('Cannot fetch photos: \n${error.message}');
-    }
-  }
-
   Future<Photo> fetchPhoto({
     @required String photoId,
     @required int width,
@@ -34,6 +21,19 @@ class PhotoRepository {
       return photo;
     } on PhotoError catch (error) {
       throw ('Cannot fetch photo with id: \n${error.message}');
+    }
+  }
+
+  Future<BuiltList<Photo>> fetchPhotos({
+    @required int page,
+  }) async {
+    try {
+      final photos = await _photoProvider.fetchPhotos(
+        page: page,
+      );
+      return photos;
+    } on PhotoError catch (error) {
+      throw ('Cannot fetch photos: \n${error.message}');
     }
   }
 }

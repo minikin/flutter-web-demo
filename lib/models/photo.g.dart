@@ -18,20 +18,20 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
   Iterable<Object> serialize(Serializers serializers, Photo object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object>[
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'author',
       serializers.serialize(object.author,
           specifiedType: const FullType(String)),
-      'width',
-      serializers.serialize(object.width, specifiedType: const FullType(int)),
       'height',
       serializers.serialize(object.height, specifiedType: const FullType(int)),
-      'url',
-      serializers.serialize(object.url, specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
       'download_url',
       serializers.serialize(object.imageUrl,
           specifiedType: const FullType(String)),
+      'url',
+      serializers.serialize(object.url, specifiedType: const FullType(String)),
+      'width',
+      serializers.serialize(object.width, specifiedType: const FullType(int)),
     ];
 
     return result;
@@ -48,29 +48,29 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
       iterator.moveNext();
       final dynamic value = iterator.current;
       switch (key) {
-        case 'id':
-          result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
-          break;
         case 'author':
           result.author = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
-          break;
-        case 'width':
-          result.width = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
           break;
         case 'height':
           result.height = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int;
           break;
-        case 'url':
-          result.url = serializers.deserialize(value,
+        case 'id':
+          result.id = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
           break;
         case 'download_url':
           result.imageUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String;
+          break;
+        case 'url':
+          result.url = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String;
+          break;
+        case 'width':
+          result.width = serializers.deserialize(value,
+              specifiedType: const FullType(int)) as int;
           break;
       }
     }
@@ -81,41 +81,41 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
 
 class _$Photo extends Photo {
   @override
-  final String id;
-  @override
   final String author;
-  @override
-  final int width;
   @override
   final int height;
   @override
-  final String url;
+  final String id;
   @override
   final String imageUrl;
+  @override
+  final String url;
+  @override
+  final int width;
 
   factory _$Photo([void Function(PhotoBuilder) updates]) =>
       (new PhotoBuilder()..update(updates)).build();
 
   _$Photo._(
-      {this.id, this.author, this.width, this.height, this.url, this.imageUrl})
+      {this.author, this.height, this.id, this.imageUrl, this.url, this.width})
       : super._() {
-    if (id == null) {
-      throw new BuiltValueNullFieldError('Photo', 'id');
-    }
     if (author == null) {
       throw new BuiltValueNullFieldError('Photo', 'author');
-    }
-    if (width == null) {
-      throw new BuiltValueNullFieldError('Photo', 'width');
     }
     if (height == null) {
       throw new BuiltValueNullFieldError('Photo', 'height');
     }
-    if (url == null) {
-      throw new BuiltValueNullFieldError('Photo', 'url');
+    if (id == null) {
+      throw new BuiltValueNullFieldError('Photo', 'id');
     }
     if (imageUrl == null) {
       throw new BuiltValueNullFieldError('Photo', 'imageUrl');
+    }
+    if (url == null) {
+      throw new BuiltValueNullFieldError('Photo', 'url');
+    }
+    if (width == null) {
+      throw new BuiltValueNullFieldError('Photo', 'width');
     }
   }
 
@@ -130,33 +130,33 @@ class _$Photo extends Photo {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Photo &&
-        id == other.id &&
         author == other.author &&
-        width == other.width &&
         height == other.height &&
+        id == other.id &&
+        imageUrl == other.imageUrl &&
         url == other.url &&
-        imageUrl == other.imageUrl;
+        width == other.width;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc($jc(0, id.hashCode), author.hashCode), width.hashCode),
-                height.hashCode),
+            $jc($jc($jc($jc(0, author.hashCode), height.hashCode), id.hashCode),
+                imageUrl.hashCode),
             url.hashCode),
-        imageUrl.hashCode));
+        width.hashCode));
   }
 
   @override
   String toString() {
     return (newBuiltValueToStringHelper('Photo')
-          ..add('id', id)
           ..add('author', author)
-          ..add('width', width)
           ..add('height', height)
+          ..add('id', id)
+          ..add('imageUrl', imageUrl)
           ..add('url', url)
-          ..add('imageUrl', imageUrl))
+          ..add('width', width))
         .toString();
   }
 }
@@ -164,40 +164,40 @@ class _$Photo extends Photo {
 class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
   _$Photo _$v;
 
-  String _id;
-  String get id => _$this._id;
-  set id(String id) => _$this._id = id;
-
   String _author;
   String get author => _$this._author;
   set author(String author) => _$this._author = author;
-
-  int _width;
-  int get width => _$this._width;
-  set width(int width) => _$this._width = width;
 
   int _height;
   int get height => _$this._height;
   set height(int height) => _$this._height = height;
 
-  String _url;
-  String get url => _$this._url;
-  set url(String url) => _$this._url = url;
+  String _id;
+  String get id => _$this._id;
+  set id(String id) => _$this._id = id;
 
   String _imageUrl;
   String get imageUrl => _$this._imageUrl;
   set imageUrl(String imageUrl) => _$this._imageUrl = imageUrl;
 
+  String _url;
+  String get url => _$this._url;
+  set url(String url) => _$this._url = url;
+
+  int _width;
+  int get width => _$this._width;
+  set width(int width) => _$this._width = width;
+
   PhotoBuilder();
 
   PhotoBuilder get _$this {
     if (_$v != null) {
-      _id = _$v.id;
       _author = _$v.author;
-      _width = _$v.width;
       _height = _$v.height;
-      _url = _$v.url;
+      _id = _$v.id;
       _imageUrl = _$v.imageUrl;
+      _url = _$v.url;
+      _width = _$v.width;
       _$v = null;
     }
     return this;
@@ -220,12 +220,12 @@ class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
   _$Photo build() {
     final _$result = _$v ??
         new _$Photo._(
-            id: id,
             author: author,
-            width: width,
             height: height,
+            id: id,
+            imageUrl: imageUrl,
             url: url,
-            imageUrl: imageUrl);
+            width: width);
     replace(_$result);
     return _$result;
   }

@@ -10,27 +10,33 @@ import 'package:flutter_web_demo/models/serializers.dart';
 part 'photo.g.dart';
 
 abstract class Photo implements Built<Photo, PhotoBuilder> {
-  @BuiltValueField(wireName: 'id')
-  String get id;
+  static Serializer<Photo> get serializer => _$photoSerializer;
+
+  factory Photo([void Function(PhotoBuilder) updates]) = _$Photo;
+
+  Photo._();
 
   @BuiltValueField(wireName: 'author')
   String get author;
 
-  @BuiltValueField(wireName: 'width')
-  int get width;
-
   @BuiltValueField(wireName: 'height')
   int get height;
 
-  @BuiltValueField(wireName: 'url')
-  String get url;
+  @BuiltValueField(wireName: 'id')
+  String get id;
 
   @BuiltValueField(wireName: 'download_url')
   String get imageUrl;
 
-  Photo._();
+  @BuiltValueField(wireName: 'url')
+  String get url;
 
-  factory Photo([updates(PhotoBuilder b)]) = _$Photo;
+  @BuiltValueField(wireName: 'width')
+  int get width;
+
+  String computedImageUrl() {
+    return 'https://picsum.photos/id/${this.id}/400/400';
+  }
 
   String toJson() {
     return json.encode(serializers.serializeWith(Photo.serializer, this));
@@ -41,18 +47,12 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
         Photo.serializer, json.decode(jsonString));
   }
 
-  static Serializer<Photo> get serializer => _$photoSerializer;
-
-  static Photo parsePhoto(String responseBody) {
-    return Photo.fromJson(responseBody);
-  }
-
   static BuiltList<Photo> parseListOfPhotos(String responseBody) {
     final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
     return deserializeListOf<Photo>(parsed);
   }
 
-  String computedImageUrl() {
-    return 'https://picsum.photos/id/${this.id}/400/400';
+  static Photo parsePhoto(String responseBody) {
+    return Photo.fromJson(responseBody);
   }
 }

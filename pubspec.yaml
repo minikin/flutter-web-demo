@@ -2,7 +2,7 @@ name: flutter_web_demo
 description: App built using Flutter
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.7.0-dev <3.0.0"
 
 dependencies:
   flutter:
