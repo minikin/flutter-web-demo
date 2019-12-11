@@ -20,13 +20,13 @@ class PhotoRepository {
     }
   }
 
-  Future<Photo> fetchQuestionnaire({
+  Future<Photo> fetchPhoto({
     @required String photoId,
     @required int width,
     @required int height,
   }) async {
     try {
-      final photo = _photoProvider.fetchPhoto(
+      final photo = await _photoProvider.fetchPhoto(
         photoId: photoId,
         width: width,
         height: height,
