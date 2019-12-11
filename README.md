@@ -25,11 +25,11 @@ Experimental responsive web app powered by Flutter and Dart.
 ## Requirements
 
 - Flutter: the latest version on `flutter dev channel`
-- Dart: 2.5.0+
-- Xcode: 10.0+
-- Androind Studio 3.3.1+
-- Ruby: 2.4+
-- CocoaPods: 1.7.0+
+- Dart: 2.7.0.dev+
+- Xcode: 11.2.0+
+- Androind Studio 3.5.0+
+- Ruby: 2.6.0+
+- CocoaPods: 1.8.4+
 - Flutter & Dart plugins:
   - [Visual Studio Code](https://flutter.dev/docs/get-started/editor?tab=androidstudio)
   - [Android Studio / IntelliJ](https://flutter.dev/docs/get-started/editor?tab=vscode)
@@ -49,7 +49,6 @@ flutter run -d chrome
 ```
 
 To hot restart (and rebuild state), press "R".
-
 
 ## Building with the production JavaScript compiler
 

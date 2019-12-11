@@ -19,41 +19,6 @@ class _HomeState extends State<Home> {
   double _screenSize = 0;
 
   @override
-  initState() {
-    _getPhotos();
-    _scrollController.addListener(() {
-      double maxScroll = _scrollController.position.maxScrollExtent;
-      double currentScroll = _scrollController.position.pixels;
-      double delta = 200;
-      if (maxScroll - currentScroll <= delta) {
-        _fetchNextPage();
-      }
-    });
-    super.initState();
-  }
-
-  @override
-  dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
-
-  _getPhotos() async {
-    final items = await _photoRepository.fetchPhotos(page: _currentPage);
-    setState(() => photoList = items.toList());
-  }
-
-  _fetchNextPage() async {
-    if (_currentPage <= 20) {
-      ++_currentPage;
-      final items = await _photoRepository.fetchPhotos(page: _currentPage);
-      setState(() => photoList.addAll(items.toList()));
-    } else {
-      _currentPage = 0;
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     setState(() => _screenSize = screenWidth(context: context));
     return Scaffold(
@@ -102,5 +67,40 @@ class _HomeState extends State<Home> {
         ),
       ),
     );
+  }
+
+  @override
+  dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
+  initState() {
+    _getPhotos();
+    _scrollController.addListener(() {
+      double maxScroll = _scrollController.position.maxScrollExtent;
+      double currentScroll = _scrollController.position.pixels;
+      double delta = 200;
+      if (maxScroll - currentScroll <= delta) {
+        _fetchNextPage();
+      }
+    });
+    super.initState();
+  }
+
+  _fetchNextPage() async {
+    if (_currentPage <= 20) {
+      ++_currentPage;
+      final items = await _photoRepository.fetchPhotos(page: _currentPage);
+      setState(() => photoList.addAll(items.toList()));
+    } else {
+      _currentPage = 0;
+    }
+  }
+
+  _getPhotos() async {
+    final items = await _photoRepository.fetchPhotos(page: _currentPage);
+    setState(() => photoList = items.toList());
   }
 }
