@@ -35,7 +35,7 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
   int get width;
 
   String computedImageUrl() {
-    return 'https://picsum.photos/id/${this.id}/400/400';
+    return 'https://picsum.photos/id/${id}/400/400';
   }
 
   String toJson() {
