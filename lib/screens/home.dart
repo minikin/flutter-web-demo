@@ -8,6 +8,7 @@ import 'package:flutter_web_demo/widgets/photo_item.dart';
 class Home extends StatefulWidget {
   Home({Key key}) : super(key: key);
 
+  @override
   _HomeState createState() => _HomeState();
 }
 
@@ -70,18 +71,18 @@ class _HomeState extends State<Home> {
   }
 
   @override
-  dispose() {
+  void dispose() {
     _scrollController.dispose();
     super.dispose();
   }
 
   @override
-  initState() {
+  void initState() {
     _getPhotos();
     _scrollController.addListener(() {
-      double maxScroll = _scrollController.position.maxScrollExtent;
-      double currentScroll = _scrollController.position.pixels;
-      double delta = 200;
+      final maxScroll = _scrollController.position.maxScrollExtent;
+      final currentScroll = _scrollController.position.pixels;
+      final delta = 200;
       if (maxScroll - currentScroll <= delta) {
         _fetchNextPage();
       }
@@ -89,7 +90,7 @@ class _HomeState extends State<Home> {
     super.initState();
   }
 
-  _fetchNextPage() async {
+  void _fetchNextPage() async {
     if (_currentPage <= 20) {
       ++_currentPage;
       final items = await _photoRepository.fetchPhotos(page: _currentPage);
@@ -99,7 +100,7 @@ class _HomeState extends State<Home> {
     }
   }
 
-  _getPhotos() async {
+  void _getPhotos() async {
     final items = await _photoRepository.fetchPhotos(page: _currentPage);
     setState(() => photoList = items.toList());
   }
