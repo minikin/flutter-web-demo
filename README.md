@@ -22,7 +22,7 @@
 
 <p align="center">
   <a href="http://minikin.me/flutter-web-demo">
-    <img src="https://github.com/minikin/flutter-web-demo/blob/master/assets/flutter_wep_app.gif?raw=true" alt="Bloc is released under the MIT license." />
+    <img src="https://github.com/minikin/flutter-web-demo/blob/master/assets/flutter_wep_app.gif?raw=true" alt="Flutter Web App Demo is released under the MIT license." />
   </a>
 </p>
 
