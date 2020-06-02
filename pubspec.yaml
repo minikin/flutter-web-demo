@@ -1,5 +1,5 @@
 name: flutter_web_demo
-description: App built using Flutter
+description: Flutter Web App Demo
 
 environment:
   sdk: ">=2.9.0-8.2.beta <3.0.0"
