@@ -1,4 +1,55 @@
 include: package:pedantic/analysis_options.yaml
 
 analyzer:
-  exclude: [build/**]
+  language:
+    strict-inference: true
+    strict-raw-types: true
+  errors:
+    missing_required_param: error
+    always_put_required_named_parameters_first: error
+    no_duplicate_case_values: error
+    avoid_relative_lib_imports: error
+  exclude:
+    - build/**
+    - lib/generated_plugin_registrant.dart
+    - lib/**.g.dart
+
+linter:
+  rules:
+    - avoid_catches_without_on_clauses
+    - avoid_private_typedef_functions
+    - avoid_returning_null
+    - avoid_setters_without_getters
+    - await_only_futures
+    - camel_case_types
+    - cancel_subscriptions
+    - close_sinks
+    - constant_identifier_names
+    - control_flow_in_finally
+    - directives_ordering
+    - empty_constructor_bodies
+    - empty_statements
+    - hash_and_equals
+    - implementation_imports
+    - lines_longer_than_80_chars
+    - non_constant_identifier_names
+    - one_member_abstracts
+    - package_names
+    - package_prefixed_library_names
+    - prefer_collection_literals
+    - prefer_const_constructors
+    - prefer_final_locals
+    - prefer_function_declarations_over_variables
+    - prefer_if_elements_to_conditional_expressions
+    - prefer_interpolation_to_compose_strings
+    - prefer_null_aware_operators
+    - prefer_typing_uninitialized_variables
+    - test_types_in_equals
+    - type_annotate_public_apis
+    - unnecessary_await_in_return
+    - unnecessary_brace_in_string_interps
+    - unnecessary_const
+    - unnecessary_getters_setters
+    - unnecessary_parenthesis
+    - unnecessary_statements
+    - use_to_and_as_if_applicable
