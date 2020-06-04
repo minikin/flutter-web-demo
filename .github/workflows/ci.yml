@@ -33,5 +33,5 @@ jobs:
       - name: Build web app
         run: flutter build web
 
-#       - name: Copy files
-#         run: cp -R /build/web /docs
+      - name: Copy files
+        run: cp -R /home/runner/work/flutter-web-demo/flutter-web-demo/build/web /home/runner/work/flutter-web-demo/flutter-web-demo/docs
