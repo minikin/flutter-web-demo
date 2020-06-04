@@ -25,7 +25,7 @@ jobs:
         run: flutter analyze
 
       - name: Build Web App
-        run: flutter run -d chrome
+        run: flutter build web
 
       - name: Copy Files
         run: cp -R /build/web /docs
