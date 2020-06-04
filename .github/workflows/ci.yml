@@ -20,9 +20,12 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
+
       - name: Analyzing project
         run: flutter analyze
+
       - name: Build Web App
         run: flutter run -d chrome
-      - name: Copy File
+
+      - name: Copy Files
         run: cp -R /build/web /docs
