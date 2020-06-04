@@ -20,7 +20,7 @@ class PhotoRepository {
       );
       return photo;
     } on PhotoError catch (error) {
-      throw ('Cannot fetch photo with id: \n${error.message}');
+      throw 'Cannot fetch photo with id: \n${error.message}';
     }
   }
 
@@ -33,7 +33,7 @@ class PhotoRepository {
       );
       return photos;
     } on PhotoError catch (error) {
-      throw ('Cannot fetch photos: \n${error.message}');
+      throw 'Cannot fetch photos: \n${error.message}';
     }
   }
 }
