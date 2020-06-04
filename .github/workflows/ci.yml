@@ -24,8 +24,11 @@ jobs:
       - name: Analyzing project
         run: flutter analyze
 
-      - name: Build Web App
+       - name: Enable web support
+        run: flutter config --enable-web
+
+      - name: Build web app
         run: flutter build web
 
-      - name: Copy Files
+      - name: Copy files
         run: cp -R /build/web /docs
