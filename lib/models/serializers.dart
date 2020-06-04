@@ -13,8 +13,8 @@ part 'serializers.g.dart';
 final Serializers serializers =
     (_$serializers.toBuilder()..addPlugin(StandardJsonPlugin())).build();
 
-T deserialize<T>(dynamic value) =>
+T deserialize<T>(Object value) =>
     serializers.deserializeWith<T>(serializers.serializerForType(T), value);
 
 BuiltList<T> deserializeListOf<T>(dynamic items) => BuiltList.from(
-    items.map((item) => deserialize<T>(item)).toList(growable: false));
+    items.map((Object item) => deserialize<T>(item)).toList(growable: false));

@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
     setState(() => _screenSize = screenWidth(context: context));
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(
             'Flutter Web App',
             style: TextStyle(
@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
       ),
       body: SafeArea(
         child: OrientationBuilder(
-          builder: (BuildContext context, Orientation orientation) {
+          builder: (context, orientation) {
             return Container(
               margin: const EdgeInsets.all(8),
               width: screenWidth(context: context),
@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
                     onClick: (photo) {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
+                        MaterialPageRoute<PhotoDetails>(
                           settings: RouteSettings(name: '/photo-${photo.id}'),
                           builder: (context) => PhotoDetails(photo: photo),
                         ),

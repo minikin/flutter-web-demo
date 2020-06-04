@@ -12,7 +12,7 @@ class PhotoProvider {
   Future<Photo> fetchPhoto({
     @required String photoId,
     @required int width,
-    @required height,
+    @required int height,
   }) async {
     final response = await _client.get(
       '$_baseUrl/id/$photoId/$width/$height',

@@ -12,8 +12,8 @@
   <a href="https://github.com/minikin/flutter-web-demo/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Flutter Web App Demo is released under the MIT license." />
   </a>
-  <a href="https://codemagic.io/apps/5cdb3c1ed85907001941f21e/5cdb3c1ed85907001941f21d/latest_build">
-    <img src="https://api.codemagic.io/apps/5cdb3c1ed85907001941f21e/5cdb3c1ed85907001941f21d/status_badge.svg" alt="Current Build Status." />
+  <a href="https://github.com/minikin/flutter-web-demo/actions">
+    <img src="https://github.com/minikin/flutter-web-demo/workflows/CI/badge.svg" alt="Current Build Status." />
   </a>
   <a href="https://github.com/minikin/flutter-web-demo/blob/master/CONTRIBUTING.md">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
@@ -31,14 +31,14 @@
 - [Features](#-features)
 - [Requirements](#-requirements)
 - [Develop](#-develop)
-- [Building with the production JavaScript compiler](#building-with-the-production-javaScript-compiler)
+- [Building with the production JavaScript compiler](#-building-with-the-production-javaScript-compiler)
 - [FAQ](#-faq)
 - [Troubleshooting](#-troubleshooting)
 - [License](#-license)
 
 ## 📋 Features
 
-- photos fetched from a remote server
+- photos fetched from a [remote free server](https://picsum.photos/)
 - infinity scrolling
 - responsive to screen size changes including mobile device orientation changes
 - powered by [build_value](https://pub.dev/packages/built_value) and [built_collection](https://pub.dev/packages/built_collection)

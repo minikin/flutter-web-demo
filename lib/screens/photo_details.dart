@@ -26,7 +26,7 @@ class PhotoDetails extends StatelessWidget {
         title: Center(
           child: Text(
             'Photo by ${photo.author}',
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
             ),
           ),

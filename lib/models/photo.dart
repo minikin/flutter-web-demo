@@ -16,26 +16,21 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
 
   Photo._();
 
-  @BuiltValueField(wireName: 'author')
   String get author;
 
-  @BuiltValueField(wireName: 'height')
   int get height;
 
-  @BuiltValueField(wireName: 'id')
   String get id;
 
   @BuiltValueField(wireName: 'download_url')
   String get imageUrl;
 
-  @BuiltValueField(wireName: 'url')
   String get url;
 
-  @BuiltValueField(wireName: 'width')
   int get width;
 
   String computedImageUrl() {
-    return 'https://picsum.photos/id/${id}/400/400';
+    return 'https://picsum.photos/id/$id/400/400';
   }
 
   String toJson() {
@@ -48,7 +43,7 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
   }
 
   static BuiltList<Photo> parseListOfPhotos(String responseBody) {
-    final parsed = json.decode(responseBody).cast<Map<String, dynamic>>();
+    final parsed = json.decode(responseBody).cast<Map<String, Object>>();
     return deserializeListOf<Photo>(parsed);
   }
 
