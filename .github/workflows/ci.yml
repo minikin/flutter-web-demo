@@ -24,7 +24,7 @@ jobs:
       - name: Analyzing project
         run: flutter analyze
 
-       - name: Enable web support
+      - name: Enable web support
         run: flutter config --enable-web
 
       - name: Build web app
