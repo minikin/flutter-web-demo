@@ -13,6 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
+      - name: PWD
+        run: pwd
 
       - uses: subosito/flutter-action@v1
         with:
@@ -30,5 +33,5 @@ jobs:
       - name: Build web app
         run: flutter build web
 
-      - name: Copy files
-        run: cp -R /build/web /docs
+#       - name: Copy files
+#         run: cp -R /build/web /docs
