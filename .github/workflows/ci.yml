@@ -2,24 +2,27 @@ name: CI
 
 on:
   push:
-    branches: [ develop ]
+    branches: [master]
   pull_request:
-    branches: 
-      - '*'
+    branches:
+      - "*"
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      
-    - uses: subosito/flutter-action@v1
-      with:
-       channel: 'beta'
-      
-    - name: Install dependencies
-      run: flutter pub get
-    - name: Analyzing project
-      run: flutter analyze
+      - uses: actions/checkout@v2
+
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "beta"
+
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Analyzing project
+        run: flutter analyze
+      - name: Build Web App
+        run: flutter run -d chrome
+      - name: Copy File
+        run: cp -R /build/web /docs

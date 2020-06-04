@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
       ),
       body: SafeArea(
         child: OrientationBuilder(
-          builder: (BuildContext context, Orientation orientation) {
+          builder: (context, orientation) {
             return Container(
               margin: const EdgeInsets.all(8),
               width: screenWidth(context: context),
