@@ -71,7 +71,7 @@ To hot restart (and rebuild state), press "R".
 To enable the release compiler, run.
 
 ```sh
-flutter build web
+flutter build web && cp -R build/web docs
 ```
 
 This will create a `build/web` directory with index.html, main.dart.js and the rest of the files needed to run
