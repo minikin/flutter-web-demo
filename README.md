@@ -33,7 +33,6 @@
 - [Develop](#-develop)
 - [Building with the production JavaScript compiler](#-building-with-the-production-javaScript-compiler)
 - [FAQ](#-faq)
-- [Troubleshooting](#-troubleshooting)
 - [License](#-license)
 
 ## 📋 Features
@@ -47,7 +46,7 @@
 ## ⚙️ Requirements
 
 - Flutter: the latest version on `flutter beta channel`
-- Dart: 2.9.0+
+- Dart: 2.13.0+
 - Xcode: 11.5.0+
 - Androind Studio 4.0.0+
 - Ruby: 2.6.0+
@@ -66,7 +65,7 @@ flutter run -d chrome
 
 To hot restart (and rebuild state), press "R".
 
-## 👷‍♂️Building with the production JavaScript compiler
+## 👷‍♂️Building with a production JavaScript compiler
 
 To enable the release compiler, run.
 
@@ -82,35 +81,6 @@ the application using a static HTTP server.
 Read more about [Flutter for web](https://github.com/flutter/flutter_web)
 
 If you have any questions ping me on twitter: [@minikin](https://twitter.com/minikin)
-
-## ⛑Troubleshooting
-
-In case of some errors try to run:
-
-```sh
-flutter clean
-```
-
-If you catch an error like this:
-
-```sh
-flutter packages pub global run webdev serve -r
-webdev could not run for this project.
-Could not find a file named "pubspec.yaml" in "/Users/JohnDoe/flutter/.pub-cache/hosted/pub.dartlang.org/built_value-6.7.1".
-pub finished with exit code 78
-```
-
-try to run:
-
-```sh
-pub cache repair
-```
-
-This project use `built_value` and `built_collection` as dependencies so you might need to run command below before to start a web server:
-
-```sh
-flutter packages pub run build_runner build --delete-conflicting-outputs
-```
 
 ## 📄 License
 

@@ -6,7 +6,7 @@ import 'package:flutter_web_demo/utils/free_functions.dart';
 import 'package:flutter_web_demo/widgets/photo_item.dart';
 
 class Home extends StatefulWidget {
-  Home({Key key}) : super(key: key);
+  Home({Key? key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    setState(() => _screenSize = screenWidth(context: context));
+    setState(() => _screenSize = screenWidth(context));
     return Scaffold(
       appBar: AppBar(
         title: const Center(
@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
           builder: (context, orientation) {
             return Container(
               margin: const EdgeInsets.all(8),
-              width: screenWidth(context: context),
+              width: screenWidth(context),
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: (_screenSize >= 600) ? 4 : 1),
@@ -79,14 +79,16 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     _getPhotos();
-    _scrollController.addListener(() {
-      final maxScroll = _scrollController.position.maxScrollExtent;
-      final currentScroll = _scrollController.position.pixels;
-      final delta = 200;
-      if (maxScroll - currentScroll <= delta) {
-        _fetchNextPage();
-      }
-    });
+    _scrollController.addListener(
+      () {
+        final maxScroll = _scrollController.position.maxScrollExtent;
+        final currentScroll = _scrollController.position.pixels;
+        final delta = 200;
+        if (maxScroll - currentScroll <= delta) {
+          _fetchNextPage();
+        }
+      },
+    );
     super.initState();
   }
 

@@ -5,23 +5,21 @@ class PhotoDetails extends StatelessWidget {
   final Photo photo;
 
   const PhotoDetails({
-    Key key,
-    @required this.photo,
+    required this.photo,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: FlatButton(
+        leading: TextButton(
+          onPressed: () => Navigator.pop(context),
           child: Image.asset(
             'icons/left_arrow.png',
             fit: BoxFit.cover,
             width: 30,
           ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
         ),
         title: Center(
           child: Text(
