@@ -6,6 +6,8 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:flutter_web_demo/models/serializers.dart';
+import 'package:flutter_web_demo/networking/photo_error.dart';
+import 'package:result_type/result_type.dart';
 
 part 'photo.g.dart';
 
@@ -29,25 +31,32 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
 
   int get width;
 
-  String computedImageUrl() {
-    return 'https://picsum.photos/id/$id/400/400';
-  }
+  String get computedImageUrl => 'https://picsum.photos/id/$id/400/400';
 
   String toJson() {
-    return json.encode(serializers.serializeWith(Photo.serializer, this));
+    return json.encode(
+      serializers.serializeWith(
+        Photo.serializer,
+        this,
+      ),
+    );
   }
 
-  static Photo fromJson(String jsonString) {
-    return serializers.deserializeWith(
-        Photo.serializer, json.decode(jsonString));
+  static Result<Photo, PhotoError> fromJson(String jsonString) {
+    final maybePhoto = serializers.deserializeWith(
+      Photo.serializer,
+      json.decode(jsonString),
+    );
+
+    if (maybePhoto != null) {
+      return Success(maybePhoto);
+    } else {
+      return Failure(const PhotoError('Bad JSON'));
+    }
   }
 
   static BuiltList<Photo> parseListOfPhotos(String responseBody) {
     final parsed = json.decode(responseBody).cast<Map<String, Object>>();
     return deserializeListOf<Photo>(parsed);
-  }
-
-  static Photo parsePhoto(String responseBody) {
-    return Photo.fromJson(responseBody);
   }
 }

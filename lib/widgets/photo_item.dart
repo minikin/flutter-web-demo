@@ -5,9 +5,9 @@ class PhotoItem extends StatelessWidget {
   final Photo photo;
   final ValueChanged<Photo> onClick;
 
-  PhotoItem({
-    @required this.photo,
-    @required this.onClick,
+  const PhotoItem({
+    required this.photo,
+    required this.onClick,
   });
 
   @override
@@ -18,10 +18,7 @@ class PhotoItem extends StatelessWidget {
       onTap: () => onClick(photo),
       child: Container(
         margin: const EdgeInsets.all(4),
-        child: Image.network(
-          photo.computedImageUrl(),
-          fit: BoxFit.cover,
-        ),
+        child: Image.network(photo.computedImageUrl, fit: BoxFit.cover),
       ),
     );
   }

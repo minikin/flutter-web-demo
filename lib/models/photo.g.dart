@@ -15,9 +15,9 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
   final String wireName = 'Photo';
 
   @override
-  Iterable<Object> serialize(Serializers serializers, Photo object,
+  Iterable<Object?> serialize(Serializers serializers, Photo object,
       {FullType specifiedType = FullType.unspecified}) {
-    final result = <Object>[
+    final result = <Object?>[
       'author',
       serializers.serialize(object.author,
           specifiedType: const FullType(String)),
@@ -38,7 +38,7 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
   }
 
   @override
-  Photo deserialize(Serializers serializers, Iterable<Object> serialized,
+  Photo deserialize(Serializers serializers, Iterable<Object?> serialized,
       {FullType specifiedType = FullType.unspecified}) {
     final result = new PhotoBuilder();
 
@@ -46,7 +46,7 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
     while (iterator.moveNext()) {
       final key = iterator.current as String;
       iterator.moveNext();
-      final dynamic value = iterator.current;
+      final Object? value = iterator.current;
       switch (key) {
         case 'author':
           result.author = serializers.deserialize(value,
@@ -93,30 +93,23 @@ class _$Photo extends Photo {
   @override
   final int width;
 
-  factory _$Photo([void Function(PhotoBuilder) updates]) =>
+  factory _$Photo([void Function(PhotoBuilder)? updates]) =>
       (new PhotoBuilder()..update(updates)).build();
 
   _$Photo._(
-      {this.author, this.height, this.id, this.imageUrl, this.url, this.width})
+      {required this.author,
+      required this.height,
+      required this.id,
+      required this.imageUrl,
+      required this.url,
+      required this.width})
       : super._() {
-    if (author == null) {
-      throw new BuiltValueNullFieldError('Photo', 'author');
-    }
-    if (height == null) {
-      throw new BuiltValueNullFieldError('Photo', 'height');
-    }
-    if (id == null) {
-      throw new BuiltValueNullFieldError('Photo', 'id');
-    }
-    if (imageUrl == null) {
-      throw new BuiltValueNullFieldError('Photo', 'imageUrl');
-    }
-    if (url == null) {
-      throw new BuiltValueNullFieldError('Photo', 'url');
-    }
-    if (width == null) {
-      throw new BuiltValueNullFieldError('Photo', 'width');
-    }
+    BuiltValueNullFieldError.checkNotNull(author, 'Photo', 'author');
+    BuiltValueNullFieldError.checkNotNull(height, 'Photo', 'height');
+    BuiltValueNullFieldError.checkNotNull(id, 'Photo', 'id');
+    BuiltValueNullFieldError.checkNotNull(imageUrl, 'Photo', 'imageUrl');
+    BuiltValueNullFieldError.checkNotNull(url, 'Photo', 'url');
+    BuiltValueNullFieldError.checkNotNull(width, 'Photo', 'width');
   }
 
   @override
@@ -162,42 +155,43 @@ class _$Photo extends Photo {
 }
 
 class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
-  _$Photo _$v;
+  _$Photo? _$v;
 
-  String _author;
-  String get author => _$this._author;
-  set author(String author) => _$this._author = author;
+  String? _author;
+  String? get author => _$this._author;
+  set author(String? author) => _$this._author = author;
 
-  int _height;
-  int get height => _$this._height;
-  set height(int height) => _$this._height = height;
+  int? _height;
+  int? get height => _$this._height;
+  set height(int? height) => _$this._height = height;
 
-  String _id;
-  String get id => _$this._id;
-  set id(String id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  String _imageUrl;
-  String get imageUrl => _$this._imageUrl;
-  set imageUrl(String imageUrl) => _$this._imageUrl = imageUrl;
+  String? _imageUrl;
+  String? get imageUrl => _$this._imageUrl;
+  set imageUrl(String? imageUrl) => _$this._imageUrl = imageUrl;
 
-  String _url;
-  String get url => _$this._url;
-  set url(String url) => _$this._url = url;
+  String? _url;
+  String? get url => _$this._url;
+  set url(String? url) => _$this._url = url;
 
-  int _width;
-  int get width => _$this._width;
-  set width(int width) => _$this._width = width;
+  int? _width;
+  int? get width => _$this._width;
+  set width(int? width) => _$this._width = width;
 
   PhotoBuilder();
 
   PhotoBuilder get _$this {
-    if (_$v != null) {
-      _author = _$v.author;
-      _height = _$v.height;
-      _id = _$v.id;
-      _imageUrl = _$v.imageUrl;
-      _url = _$v.url;
-      _width = _$v.width;
+    final $v = _$v;
+    if ($v != null) {
+      _author = $v.author;
+      _height = $v.height;
+      _id = $v.id;
+      _imageUrl = $v.imageUrl;
+      _url = $v.url;
+      _width = $v.width;
       _$v = null;
     }
     return this;
@@ -205,14 +199,12 @@ class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
 
   @override
   void replace(Photo other) {
-    if (other == null) {
-      throw new ArgumentError.notNull('other');
-    }
+    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Photo;
   }
 
   @override
-  void update(void Function(PhotoBuilder) updates) {
+  void update(void Function(PhotoBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
@@ -220,12 +212,16 @@ class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
   _$Photo build() {
     final _$result = _$v ??
         new _$Photo._(
-            author: author,
-            height: height,
-            id: id,
-            imageUrl: imageUrl,
-            url: url,
-            width: width);
+            author: BuiltValueNullFieldError.checkNotNull(
+                author, 'Photo', 'author'),
+            height: BuiltValueNullFieldError.checkNotNull(
+                height, 'Photo', 'height'),
+            id: BuiltValueNullFieldError.checkNotNull(id, 'Photo', 'id'),
+            imageUrl: BuiltValueNullFieldError.checkNotNull(
+                imageUrl, 'Photo', 'imageUrl'),
+            url: BuiltValueNullFieldError.checkNotNull(url, 'Photo', 'url'),
+            width:
+                BuiltValueNullFieldError.checkNotNull(width, 'Photo', 'width'));
     replace(_$result);
     return _$result;
   }
