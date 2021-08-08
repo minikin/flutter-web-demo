@@ -32,7 +32,7 @@
 - [Requirements](#-requirements)
 - [Develop](#-develop)
 - [Building with the production JavaScript compiler](#-building-with-the-production-javaScript-compiler)
-- [FAQ](#-faq)
+- [Support](#-support)
 - [Troubleshooting](#-troubleshooting)
 - [License](#-license)
 
@@ -77,11 +77,9 @@ flutter build web && cp -R build/web docs
 This will create a `build/web` directory with index.html, main.dart.js and the rest of the files needed to run
 the application using a static HTTP server.
 
-## 🤷‍♀️ FAQ
+## 🤷‍♀️ Support
 
-Read more about [Flutter for web](https://github.com/flutter/flutter_web)
-
-If you have any questions ping me on twitter: [@minikin](https://twitter.com/minikin)
+Post issues and feature requests on the GitHub [issue tracker](https://github.com/minikin/flutter-web-demo/issues).
 
 ## ⛑Troubleshooting
 
