@@ -8,7 +8,7 @@ class PhotoProvider {
   final _baseUrl = 'https://picsum.photos/v2';
   final _client = Client();
 
-  Future<Photo> fetchPhoto({
+  Future<Photo?> fetchPhoto({
     required String photoId,
     required int width,
     required int height,

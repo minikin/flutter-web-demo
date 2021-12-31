@@ -17,7 +17,7 @@ class PhotoRepository {
         width: width,
         height: height,
       );
-      return photo;
+      return photo!;
     } on PhotoError catch (error) {
       throw 'Cannot fetch photo with id: \n${error.message}';
     }

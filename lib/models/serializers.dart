@@ -11,13 +11,6 @@ part 'serializers.g.dart';
   Photo,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
-      ..addPlugin(
-        StandardJsonPlugin(),
-      ))
+      ..addBuilderFactory(photoListType, () => ListBuilder<Photo>())
+      ..addPlugin(StandardJsonPlugin()))
     .build();
-
-T deserialize<T>(Object value) =>
-    serializers.deserializeWith<T>(serializers.serializerForType(T), value);
-
-BuiltList<T> deserializeListOf<T>(dynamic items) => BuiltList.from(
-    items.map((Object item) => deserialize<T>(item)).toList(growable: false));
