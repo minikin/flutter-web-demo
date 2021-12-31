@@ -2,7 +2,7 @@ name: flutter_web_demo
 description: Flutter Web App Demo
 
 environment:
-  sdk: ">=2.12.3 <3.0.0"
+  sdk: ">=2.15.1 <3.0.0"
 
 dependencies:
   flutter:

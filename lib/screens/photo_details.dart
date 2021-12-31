@@ -14,16 +14,6 @@ class PhotoDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: TextButton(
-          child: Image.asset(
-            'icons/left_arrow.png',
-            fit: BoxFit.cover,
-            width: 30,
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
         title: Center(
           child: Text(
             'Photo by ${photo.author}',
