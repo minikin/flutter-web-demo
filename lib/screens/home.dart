@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_web_demo/models/photo.dart';
 import 'package:flutter_web_demo/repositories/photos_repository.dart';
 import 'package:flutter_web_demo/screens/photo_details.dart';
@@ -6,7 +7,7 @@ import 'package:flutter_web_demo/utils/free_functions.dart';
 import 'package:flutter_web_demo/widgets/photo_item.dart';
 
 class Home extends StatefulWidget {
-  Home({Key key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
@@ -34,7 +35,7 @@ class _HomeState extends State<Home> {
           ),
         ),
         backgroundColor: Colors.white,
-        brightness: Brightness.light,
+        systemOverlayStyle: SystemUiOverlayStyle.light,
         elevation: 1,
       ),
       body: SafeArea(
