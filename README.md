@@ -20,8 +20,6 @@
   </a>
 </p>
 
-
-
 <p align="center">
   <a href="http://minikin.me/flutter-web-demo">
     <img src="https://github.com/minikin/flutter-web-demo/blob/master/assets/flutter_wep_app.gif?raw=true" alt="Flutter Web App Demo is released under the MIT license." />
@@ -47,12 +45,9 @@
 
 ## ⚙️ Requirements
 
-- Flutter: the latest version on `flutter beta channel`
-- Dart: 2.9.0+
-- Xcode: 11.5.0+
-- Androind Studio 4.0.0+
-- Ruby: 2.6.0+
-- CocoaPods: 1.8.4+
+- Flutter: 2.8.1+
+- Dart: 2.15.1+
+- Fvm: 2.2.6+
 - Flutter & Dart plugins:
   - [Visual Studio Code](https://flutter.dev/docs/get-started/editor?tab=androidstudio)
   - [Android Studio / IntelliJ](https://flutter.dev/docs/get-started/editor?tab=vscode)
