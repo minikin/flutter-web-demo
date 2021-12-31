@@ -12,13 +12,15 @@
   <a href="https://github.com/minikin/flutter-web-demo/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Flutter Web App Demo is released under the MIT license." />
   </a>
-  <a href="https://github.com/minikin/flutter-web-demo/actions">
-    <img src="https://github.com/minikin/flutter-web-demo/workflows/CI/badge.svg" alt="Current Build Status." />
+  <a href="https://github.com/minikin/flutter-web-demo/actions/workflows/ci.yml">
+    <img src="https://github.com/minikin/flutter-web-demo/actions/workflows/ci.yml/badge.svg" alt="Current Build Status." />
   </a>
   <a href="https://github.com/minikin/flutter-web-demo/blob/master/CONTRIBUTING.md">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
   </a>
 </p>
+
+
 
 <p align="center">
   <a href="http://minikin.me/flutter-web-demo">
