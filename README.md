@@ -57,7 +57,7 @@
 Run you app in Chrome
 
 ```sh
-flutter run -d chrome
+fvm flutter run -d chrome
 ```
 
 To hot restart (and rebuild state), press "R".
@@ -67,7 +67,7 @@ To hot restart (and rebuild state), press "R".
 To enable the release compiler, run.
 
 ```sh
-flutter build web && cp -R build/web docs
+fvm flutter build web && cp -R build/web/ docs
 ```
 
 This will create a `build/web` directory with index.html, main.dart.js and the rest of the files needed to run
