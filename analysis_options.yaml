@@ -1,4 +1,4 @@
-include: package:pedantic/analysis_options.yaml
+nclude: package:flutter_lints/flutter.yaml
 
 analyzer:
   language:
@@ -34,7 +34,6 @@ linter:
     - lines_longer_than_80_chars
     - non_constant_identifier_names
     - one_member_abstracts
-    - package_names
     - package_prefixed_library_names
     - prefer_collection_literals
     - prefer_const_constructors

@@ -29,25 +29,21 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
 
   int get width;
 
-  String computedImageUrl() {
-    return 'https://picsum.photos/id/$id/400/400';
-  }
+  String get computedImageUrl => 'https://picsum.photos/id/$id/400/400';
 
-  String toJson() {
-    return json.encode(serializers.serializeWith(Photo.serializer, this));
-  }
-
-  static Photo fromJson(String jsonString) {
+  static Photo? fromJson(String jsonString) {
     return serializers.deserializeWith(
-        Photo.serializer, json.decode(jsonString));
+      Photo.serializer,
+      json.decode(jsonString),
+    );
   }
+
+  // static Photo? parsePhoto(String responseBody) {
+  //   return Photo.fromJson(responseBody);
+  // }
 
   static BuiltList<Photo> parseListOfPhotos(String responseBody) {
     final parsed = json.decode(responseBody).cast<Map<String, Object>>();
     return deserializeListOf<Photo>(parsed);
-  }
-
-  static Photo parsePhoto(String responseBody) {
-    return Photo.fromJson(responseBody);
   }
 }
