@@ -11,6 +11,6 @@ part 'serializers.g.dart';
   Photo,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
-      ..addBuilderFactory(photoListType, () => ListBuilder<Photo>())
+      ..addBuilderFactory(Photo.type, () => ListBuilder<Photo>())
       ..addPlugin(StandardJsonPlugin()))
     .build();

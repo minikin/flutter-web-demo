@@ -32,7 +32,7 @@ class PhotoProvider {
     );
     print('fetchPhotos: ${response.statusCode}');
     if (response.statusCode == 200) {
-      return compute(Photo.parseListOfPhotos, response.body);
+      return compute(Photo.listFromJsson, response.body);
     } else {
       throw PhotoError(response.statusCode.toString());
     }
