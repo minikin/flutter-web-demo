@@ -9,9 +9,9 @@ import 'package:flutter_web_demo/models/serializers.dart';
 
 part 'photo.g.dart';
 
-final photoListType = const FullType(BuiltList, [FullType(Photo)]);
-
 abstract class Photo implements Built<Photo, PhotoBuilder> {
+  static final type = const FullType(BuiltList, [FullType(Photo)]);
+
   static Serializer<Photo> get serializer => _$photoSerializer;
 
   factory Photo([void Function(PhotoBuilder) updates]) = _$Photo;
@@ -19,6 +19,8 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
   Photo._();
 
   String get author;
+
+  String get computedImageUrl => 'https://picsum.photos/id/$id/400/400';
 
   int get height;
 
@@ -31,8 +33,6 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
 
   int get width;
 
-  String get computedImageUrl => 'https://picsum.photos/id/$id/400/400';
-
   static Photo? fromJson(String jsonString) {
     return serializers.deserializeWith(
       Photo.serializer,
@@ -40,12 +40,12 @@ abstract class Photo implements Built<Photo, PhotoBuilder> {
     );
   }
 
-  static BuiltList<Photo> parseListOfPhotos(String responseBody) {
+  static BuiltList<Photo> listFromJsson(String responseBody) {
     final serialized = json.decode(responseBody) as Object;
 
     return serializers.deserialize(
       serialized,
-      specifiedType: photoListType,
+      specifiedType: type,
     ) as BuiltList<Photo>;
   }
 }
