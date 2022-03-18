@@ -1,3 +1,6 @@
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
+
+
 <h1 align="center">
   <a href="https://github.com/minikin/flutter-web-demo">
    Flutter Web App Demo
@@ -17,12 +20,6 @@
   </a>
   <a href="https://github.com/minikin/flutter-web-demo/blob/master/CONTRIBUTING.md">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="http://minikin.me/flutter-web-demo">
-    <img src="https://github.com/minikin/flutter-web-demo/blob/master/assets/flutter_wep_app.gif?raw=true" alt="Flutter Web App Demo is released under the MIT license." />
   </a>
 </p>
 
