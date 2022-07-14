@@ -2,20 +2,20 @@ name: flutter_web_demo
 description: Flutter Web App Demo
 
 environment:
-  sdk: ">=2.15.1 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
   built_collection: ^5.1.1
-  built_value: ^8.1.3
+  built_value: ^8.4.0
   http: ^0.13.4
 
 dev_dependencies:
-  build_runner: ^2.1.7
-  built_value_generator: ^8.1.3
-  flutter_lints: ^1.0.4
+  build_runner: ^2.2.0
+  built_value_generator: ^8.4.0
+  flutter_lints: ^2.0.1
 
 flutter:
   uses-material-design: true
