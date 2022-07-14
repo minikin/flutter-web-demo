@@ -44,33 +44,33 @@ class _$PhotoSerializer implements StructuredSerializer<Photo> {
 
     final iterator = serialized.iterator;
     while (iterator.moveNext()) {
-      final key = iterator.current as String;
+      final key = iterator.current! as String;
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
         case 'author':
           result.author = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'height':
           result.height = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'download_url':
           result.imageUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'url':
           result.url = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
+              specifiedType: const FullType(String))! as String;
           break;
         case 'width':
           result.width = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int))! as int;
           break;
       }
     }
@@ -94,7 +94,7 @@ class _$Photo extends Photo {
   final int width;
 
   factory _$Photo([void Function(PhotoBuilder)? updates]) =>
-      (new PhotoBuilder()..update(updates)).build();
+      (new PhotoBuilder()..update(updates))._build();
 
   _$Photo._(
       {required this.author,
@@ -104,12 +104,12 @@ class _$Photo extends Photo {
       required this.url,
       required this.width})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(author, 'Photo', 'author');
-    BuiltValueNullFieldError.checkNotNull(height, 'Photo', 'height');
-    BuiltValueNullFieldError.checkNotNull(id, 'Photo', 'id');
-    BuiltValueNullFieldError.checkNotNull(imageUrl, 'Photo', 'imageUrl');
-    BuiltValueNullFieldError.checkNotNull(url, 'Photo', 'url');
-    BuiltValueNullFieldError.checkNotNull(width, 'Photo', 'width');
+    BuiltValueNullFieldError.checkNotNull(author, r'Photo', 'author');
+    BuiltValueNullFieldError.checkNotNull(height, r'Photo', 'height');
+    BuiltValueNullFieldError.checkNotNull(id, r'Photo', 'id');
+    BuiltValueNullFieldError.checkNotNull(imageUrl, r'Photo', 'imageUrl');
+    BuiltValueNullFieldError.checkNotNull(url, r'Photo', 'url');
+    BuiltValueNullFieldError.checkNotNull(width, r'Photo', 'width');
   }
 
   @override
@@ -143,7 +143,7 @@ class _$Photo extends Photo {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('Photo')
+    return (newBuiltValueToStringHelper(r'Photo')
           ..add('author', author)
           ..add('height', height)
           ..add('id', id)
@@ -209,22 +209,24 @@ class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
   }
 
   @override
-  _$Photo build() {
+  Photo build() => _build();
+
+  _$Photo _build() {
     final _$result = _$v ??
         new _$Photo._(
             author: BuiltValueNullFieldError.checkNotNull(
-                author, 'Photo', 'author'),
+                author, r'Photo', 'author'),
             height: BuiltValueNullFieldError.checkNotNull(
-                height, 'Photo', 'height'),
-            id: BuiltValueNullFieldError.checkNotNull(id, 'Photo', 'id'),
+                height, r'Photo', 'height'),
+            id: BuiltValueNullFieldError.checkNotNull(id, r'Photo', 'id'),
             imageUrl: BuiltValueNullFieldError.checkNotNull(
-                imageUrl, 'Photo', 'imageUrl'),
-            url: BuiltValueNullFieldError.checkNotNull(url, 'Photo', 'url'),
-            width:
-                BuiltValueNullFieldError.checkNotNull(width, 'Photo', 'width'));
+                imageUrl, r'Photo', 'imageUrl'),
+            url: BuiltValueNullFieldError.checkNotNull(url, r'Photo', 'url'),
+            width: BuiltValueNullFieldError.checkNotNull(
+                width, r'Photo', 'width'));
     replace(_$result);
     return _$result;
   }
 }
 
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new
+// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
