@@ -42,8 +42,8 @@
 
 ## ⚙️ Requirements
 
-- Flutter: 3.0.1+
-- Dart: 2.17.0+
+- Flutter: 3.3.0+
+- Dart: 2.18.0+
 - Flutter & Dart plugins:
   - [Visual Studio Code](https://flutter.dev/docs/get-started/editor?tab=androidstudio)
   - [Android Studio / IntelliJ](https://flutter.dev/docs/get-started/editor?tab=vscode)
