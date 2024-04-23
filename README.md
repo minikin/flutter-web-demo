@@ -1,5 +1,3 @@
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
-
 <h1 align="center">
   <a href="https://github.com/minikin/flutter-web-demo">
    Flutter Web App Demo
